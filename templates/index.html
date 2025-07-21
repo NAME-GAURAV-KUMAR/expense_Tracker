@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <!-- Link to the updated stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Expense Tracker</h1>
+        </header>
+
+        <!-- Balance section is now styled as a prominent feature card -->
+        <section class="balance">
+            <h2>Initial Balance: ${{ initial_balance }}</h2>
+            <p id="remaining-balance">Remaining Balance: $0</p>
+        </section>
+
+        <!-- The form for adding expenses -->
+        <section class="form-section">
+            <form id="expense-form">
+                <input type="text" id="title" placeholder="Expense Title" required>
+                <input type="number" id="amount" placeholder="Amount" required>
+                <input type="date" id="date" required>
+                <button type="submit">Add Expense</button>
+            </form>
+        </section>
+
+        <!-- The list of expenses, now rendered as cards -->
+        <section class="expense-list">
+            <h2>Your Expenses</h2>
+            <table id="expense-table">
+                <!-- Table headers are hidden by CSS but useful for accessibility -->
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Expenses will be dynamically populated here by your script -->
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <!-- Your JavaScript file for functionality -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

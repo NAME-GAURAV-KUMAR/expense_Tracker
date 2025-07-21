@@ -1,0 +1,163 @@
+/* General Body and Font Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', 'Arial', sans-serif;
+  background-color: #0d47a1; /* Deep blue background from the image */
+  color: #333;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+/* Main Container - The central app window */
+.container {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: #f7f9fc; /* A very light blue-white for the main card */
+  padding: 30px;
+  border-radius: 24px; /* Softer, more modern rounded corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Style */
+header h1 {
+  text-align: center;
+  color: #1e3a8a; /* A strong, dark blue for titles */
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+/* Balance Section - Styled to be a prominent feature */
+.balance {
+  background: linear-gradient(135deg, #2563eb, #3b82f6); /* Gradient blue background */
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+  border-radius: 16px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+
+.balance h2 {
+  font-size: 1.2em;
+  font-weight: normal;
+  opacity: 0.9;
+}
+
+.balance p {
+  font-size: 2em;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Form Section for Adding Expenses */
+.form-section {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Spacing between form elements */
+}
+
+input {
+  padding: 15px;
+  border: 1px solid #dbeafe; /* Light blue border */
+  border-radius: 10px;
+  font-size: 1em;
+  background-color: #f7f9fc;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+button[type="submit"] {
+  padding: 15px;
+  background-color: #db2777; /* Accent pink/red color from image */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #c21a68; /* Darker shade on hover */
+  transform: translateY(-2px);
+}
+
+/* Expense List - Styled as a list of cards */
+.expense-list h2 {
+  text-align: center;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  color: #1e3a8a;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px; /* Space between rows/cards */
+}
+
+th {
+  display: none; /* Hide traditional table headers */
+}
+
+td {
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+tbody tr {
+  border-radius: 12px;
+  overflow: hidden; /* Ensures child elements conform to border-radius */
+  display: grid; /* Use grid for better mobile layout */
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "title amount"
+    "date action";
+  gap: 5px 20px;
+  align-items: center;
+}
+
+/* Position each data cell in the grid */
+td:nth-child(1) { grid-area: title; font-weight: bold; color: #1e3a8a; }
+td:nth-child(2) { grid-area: amount; text-align: right; font-weight: bold; color: #db2777; font-size: 1.1em; }
+td:nth-child(3) { grid-area: date; color: #6b7280; }
+td:nth-child(4) { grid-area: action; text-align: right; }
+
+button.delete-btn {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.delete-btn:hover {
+  background-color: #dc2626;
+}
